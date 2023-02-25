@@ -1,45 +1,13 @@
 # PHP1Recuperation
 
 form.php
-
 <?php
-$errors = [];
-
+//var_dump($_SERVER);
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // nettoyage et validation des données soumises via le formulaire 
-    if (!isset($_POST['firstname']) || trim($_POST['firstname']) === '')
-        $errors[] = "Veuillez renseigner votre prénom";
-    if (!isset($_POST['lastname']) || trim($_POST['lastname']) === '')
-        $errors[] = "Veuillez saisir votre nom";
-    if (!isset($_POST['email']) || trim($_POST['email']) === '')
-        $errors[] = "Veuillez saisir votre email";
-    if (!isset($_POST['tel']) || trim($_POST['tel']) === '')
-        $errors[] = "Veuillez saisir votre numéro de téléphone";
-    // if (!isset($_POST['subject']) || trim($_POST['subject']) === '')
-    //     $errors[] = "Veuillez préciser le sujet";
-    if (!isset($_POST['message']) || trim($_POST['message']) === '')
-        $errors[] = "Veuillez saisir votre message";
-    if (empty($errors)) {
-        // traitement du formulaire
-        // puis redirection
-        header('Location: thanks.php');
-    }
-}
+    var_dump($_POST);
+    die(); }
 ?>
 
-// A placer avant <form>
-    <?php // Affichage des éventuelles erreurs 
-    if (count($errors) > 0): ?>
-        <div>
-            <ul>
-                <?php foreach ($errors as $error): ?>
-                    <li>
-                        <?= $error ?>
-                    </li>
-                <?php endforeach; ?>
-            </ul>
-        </div>
-    <?php endif; ?>
 
 var_dump($_SERVER) :
 
